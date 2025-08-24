@@ -1,6 +1,6 @@
 def call() 
 {
-    withEnv(["KUBECONFIG=/home/soniya/.kube/config"]) 
+    withEnv(["KUBECONFIG=/var/lib/jenkins/.kube/config"]) 
     {
         sh """
           kubectl apply -f k8s/Deployment.yml
