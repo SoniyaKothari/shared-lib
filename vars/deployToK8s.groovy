@@ -6,7 +6,7 @@ def call()
           kubectl apply -f k8s/Deployment.yml
           kubectl apply -f k8s/Service.yml
           kubectl rollout status deployment/weather -n devops
-          nohup kubectl port-forward service/weather-svc 8000:8000 -n devops &
+          nohup /var/lib/jenkins/start-port-forward.sh > /var/lib/jenkins/port-forward.log 2>&1 &
         """
     }
 }
